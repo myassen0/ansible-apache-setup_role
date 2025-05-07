@@ -36,7 +36,9 @@
     immediate: yes
 
 - name: Restart Apache
-  notify: restart apache
+  service:
+    name: httpd
+    state: restarted
 
 - name: Upload index.html page
   copy:
